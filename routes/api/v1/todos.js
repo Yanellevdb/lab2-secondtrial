@@ -1,58 +1,15 @@
 const express= require('express');
 const router= express.Router();
+const todosController= require('../../../controllers/api/v1/todos');
 
-router.get("/", (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "message": "GETTING messages"
-        }
-    });
-});
+router.get("/", todosController.getAll);
 
-router.get("/:id", (req, res) => {
-    res.json({
-        "status":"success",
-        "data": {
-            "message": `GETTING message with id ${id}`
-        }
-    });
-});
+router.get("/:id", todosController.getId);
 
-router.post("/", (req, res) => {
-    res.json({
-        "status": "success", 
-        "data": {
-            "message": `POSTING new message for user ${username}`
-        }
-    });
-});
+router.post("/", todosController.postMessage);
 
-router.put("/:id", (req, res) => {
-    res.json({
-        "status": "success", 
-        "data": {
-            "message": `UPDATING message with id ${id}`
-        }
-    });
-});
+router.put("/:id", todosController.updateMessage);
 
-router.delete("/:id", (req, res) => {
-    res.json({
-        "status": "success", 
-        "data": {
-            "message": `DELETING message with id ${id}`
-        }
-    })
-})
-
-router.get("/:username", (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "message": `GETTING message from user ${username}`
-        }
-    })
-})
+router.delete("/:id", todosController.deleteMessage);
 
 module.exports= router;
