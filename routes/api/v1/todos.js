@@ -1,15 +1,15 @@
 const express= require('express');
 const router= express.Router();
-const todosController= require('../../../controllers/api/v1/todos');
+const messagesController= require('../../../controllers/api/v1/messages');
 
-router.get("/", todosController.getAll);
+router.get("/", messagesController.getAll);
 
-router.get("/:id", todosController.getId);
+router.get("/:id", messagesController.getId);
 
-router.post("/", todosController.postMessage);
+router.post("/", messagesController.postMessage);
 
-router.put("/:id", todosController.updateMessage);
+router.put("/:id", messagesController.updateMessage);
 
-router.delete("/:id", todosController.deleteMessage);
+router.delete("/:id", messagesController.deleteMessage);
 
 module.exports= router;

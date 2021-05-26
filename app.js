@@ -7,7 +7,7 @@ var cors= require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var apiTodosRouter= require('./routes/api/v1/todos');
+var apiMessagesRouter= require('./routes/api/v1/messages');
 
 var app = express();
 
@@ -21,10 +21,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/v1/todos', apiTodosRouter);
-app.use(cors());
+app.use('/api/v1/messages', apiMessagesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
