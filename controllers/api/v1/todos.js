@@ -39,7 +39,7 @@ const deleteMessage= (req, res) => {
 }
 
 const getAll= (req, res) => {
-    if (req.params.user){
+    if (req.query.user){
         let username= req.query.user;
         res.json({
             "status": "success",
