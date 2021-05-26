@@ -6,7 +6,7 @@ router.get("/", messagesController.getAll);
 
 router.get("/:id", messagesController.getId);
 
-router.post("/", messagesController.postMessage);
+router.post("/:user", messagesController.postMessage);
 
 router.put("/:id", messagesController.updateMessage);
 
