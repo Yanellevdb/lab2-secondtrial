@@ -12,9 +12,7 @@ const postMessage= (req, res) => {
     let username= req.query.user;
     res.json({
         "status": "success", 
-        "data": {
-            "message": `POSTING new message for user Pikachu`
-        }
+        "message": `POSTING new message for user Pikachu`
     });
 }
 
