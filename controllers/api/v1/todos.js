@@ -13,7 +13,7 @@ const postMessage= (req, res) => {
     res.json({
         "status": "success", 
         "data": {
-            "message": `POSTING new message for user ${username}`
+            "message": `POSTING new message for user Pikachu`
         }
     });
 }
